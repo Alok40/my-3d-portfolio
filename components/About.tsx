@@ -5,20 +5,20 @@ import { Code2, Database } from 'lucide-react';
 
 export default function About() {
   return (
-    // Note: Added pointer-events-none so we can click "through" the empty space if needed
-    <section id="about" className="relative h-[100vh] w-full flex items-center justify-center px-4 md:px-10 pointer-events-none">
+    // FIX: Added 'overflow-x-hidden' here to prevent the mobile white gap
+    <section id="about" className="relative h-[100vh] w-full flex items-center justify-center px-4 md:px-10 pointer-events-none overflow-x-hidden">
       
       {/* 3-Column Layout: Title (Left) | Empty Space for Avatar (Center) | Cards (Right) */}
       <div className="w-full max-w-[1400px] flex flex-col md:flex-row justify-between items-center h-full">
 
         {/* 1. LEFT SIDE: Big Title */}
-        <div className="w-full md:w-1/3 text-left z-10">
+        <div className="w-full md:w-1/3 text-left z-10 mt-20 md:mt-0">
           <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.5 }}
-            className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-none drop-shadow-2xl uppercase"
+            className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-none drop-shadow-2xl uppercase text-center md:text-left"
           >
             WHAT <br />
             <span className="text-blue-500">I DO</span>
@@ -27,11 +27,11 @@ export default function About() {
 
         {/* 2. MIDDLE: The Invisible Hole for the 3D Avatar */}
         {/* On mobile, this shrinks so the text stacks nicely. On desktop, it takes up 1/3 of the screen width */}
-        <div className="w-full md:w-1/3 h-20 md:h-full"></div>
+        <div className="w-full md:w-1/3 h-10 md:h-full shrink-0"></div>
 
         {/* 3. RIGHT SIDE: The Glass Cards */}
         {/* Added pointer-events-auto here so the user can actually hover over these cards */}
-        <div className="w-full md:w-1/3 flex flex-col gap-6 pointer-events-auto z-10 mt-8 md:mt-0">
+        <div className="w-full md:w-1/3 flex flex-col gap-6 pointer-events-auto z-10 mb-20 md:mb-0">
           
           <motion.div
             initial={{ opacity: 0, x: 50 }}
