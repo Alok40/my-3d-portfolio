@@ -15,6 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Alok Anand | Web Developer & Designer",
   description: "Portfolio of Alok Anand, showcasing 3D web development and design projects.",
+  openGraph: {
+    title: "Alok Anand | Web Developer & Designer",
+    description: "Welcome to my digital portfolio.",
+    url: "https://alok-anand-portfolio.vercel.app/",
+    siteName: "Alok Anand Portfolio",
+    type: "website",
+  },
 };
 export default function RootLayout({
   children,
