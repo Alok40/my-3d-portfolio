@@ -40,12 +40,12 @@ export default function Contact() {
           className="flex flex-wrap justify-center gap-4 md:gap-8 mb-24 md:mb-32 w-full"
         >
           {/* GitHub */}
-          <a href="#" aria-label="GitHub" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]">
+          <a href="https://github.com/Alok40" aria-label="GitHub" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]">
             <Github className="w-6 h-6 md:w-8 md:h-8 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
           </a>
           
           {/* LinkedIn (Blue Glow) */}
-          <a href="#" aria-label="LinkedIn" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-[#0a66c2]/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(10,102,194,0.4)]">
+          <a href="https://www.linkedin.com/in/alok-anand-5510a41bb/" aria-label="LinkedIn" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-[#0a66c2]/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(10,102,194,0.4)]">
             <Linkedin className="w-6 h-6 md:w-8 md:h-8 text-gray-400 group-hover:text-[#0a66c2] group-hover:scale-110 transition-all duration-300" />
           </a>
           
@@ -55,7 +55,7 @@ export default function Contact() {
           </a>
           
           {/* Mail (Red Glow) */}
-          <a href="mailto:hello@alokanand.com" aria-label="Email" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-red-500/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]">
+          <a href="mailto:40alok@gmail.com" aria-label="Email" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-red-500/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]">
             <Mail className="w-6 h-6 md:w-8 md:h-8 text-gray-400 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300" />
           </a>
         </motion.div>
