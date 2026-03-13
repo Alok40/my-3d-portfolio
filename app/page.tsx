@@ -197,10 +197,10 @@ export default function Home() {
 
         <Hero />
         <About />
-        <Experience />
-        <Projects />
-        <TechStack />
-        <Contact />
+        {/* <Experience /> */}
+        {/* <Projects /> */}
+        {/* <TechStack /> */}
+        {/* <Contact /> */}
       </div>
     </main>
   );
