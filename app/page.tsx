@@ -1,7 +1,7 @@
 'use client';
 
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Environment, ContactShadows, useFBX, useGLTF, useAnimations, Float } from '@react-three/drei';
+import { Environment, ContactShadows, useFBX, useGLTF, useAnimations, Float, Html, useProgress } from '@react-three/drei';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
@@ -12,6 +12,27 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import TechStack from '@/components/TechStack';
 import Contact from '@/components/Contact';
+
+// --- NEW: 3D Asset Loading Screen ---
+function CanvasLoader() {
+  const { progress } = useProgress();
+  return (
+    <Html center>
+      <div className="flex flex-col items-center justify-center w-screen h-screen bg-[#0a0a0a]">
+        {/* Glowing AA Logo Animation */}
+        <div className="flex space-x-1 text-6xl font-mono font-bold animate-pulse tracking-wider">
+          <span className="text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]">&lt;A</span>
+          <span className="text-green-400 drop-shadow-[0_0_15px_rgba(74,222,128,0.8)]">A /&gt;</span>
+        </div>
+        
+        {/* Real-time progress percentage */}
+        <p className="mt-8 text-sm font-mono text-gray-500 tracking-widest uppercase">
+          Initializing 3D Space... {progress.toFixed(0)}%
+        </p>
+      </div>
+    </Html>
+  );
+}
 
 function AnimatedScene() {
   const masterGroupRef = useRef<THREE.Group>(null);
@@ -156,7 +177,8 @@ export default function Home() {
           <ambientLight intensity={0.4} />
           <Environment preset="city" />
           
-          <Suspense fallback={null}>
+          {/* THIS HAS BEEN UPDATED */}
+          <Suspense fallback={<CanvasLoader />}>
             <AnimatedScene />
           </Suspense>
         </Canvas>
