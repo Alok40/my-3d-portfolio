@@ -37,25 +37,28 @@ export default function Contact() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 md:gap-8 mb-24 md:mb-32 w-full"
+          // FIX 1: Added pointer-events-auto and relative z-50 to pierce through any invisible layers
+          className="flex flex-wrap justify-center gap-4 md:gap-8 mb-24 md:mb-32 w-full relative z-50 pointer-events-auto"
         >
           {/* GitHub */}
-          <a href="https://github.com/Alok40" aria-label="GitHub" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]">
+          {/* FIX 2: Added target="_blank" and rel="noopener noreferrer" to safely open in a new tab */}
+          <a href="https://github.com/Alok40" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]">
             <Github className="w-6 h-6 md:w-8 md:h-8 text-gray-400 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
           </a>
           
           {/* LinkedIn (Blue Glow) */}
-          <a href="https://www.linkedin.com/in/alok-anand-5510a41bb/" aria-label="LinkedIn" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-[#0a66c2]/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(10,102,194,0.4)]">
+          <a href="https://www.linkedin.com/in/alok-anand-5510a41bb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-[#0a66c2]/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(10,102,194,0.4)]">
             <Linkedin className="w-6 h-6 md:w-8 md:h-8 text-gray-400 group-hover:text-[#0a66c2] group-hover:scale-110 transition-all duration-300" />
           </a>
           
           {/* Twitter / X */}
-          <a href="#" aria-label="Twitter" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-blue-400/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(96,165,250,0.3)]">
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-blue-400/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(96,165,250,0.3)]">
             <Twitter className="w-6 h-6 md:w-8 md:h-8 text-gray-400 group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300" />
           </a>
           
           {/* Mail (Red Glow) */}
-          <a href="mailto:40alok@gmail.com" aria-label="Email" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-red-500/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]">
+          {/* Note: mailto: automatically opens the default email client, so it doesn't strictly need target="_blank", but it doesn't hurt! */}
+          <a href="mailto:40alok@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/[0.02] border border-white/10 rounded-full backdrop-blur-md hover:bg-white/10 hover:border-red-500/60 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]">
             <Mail className="w-6 h-6 md:w-8 md:h-8 text-gray-400 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300" />
           </a>
         </motion.div>
